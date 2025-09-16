@@ -1,0 +1,405 @@
+/* Dashboard.css - Cleaned up without profile styles */
+
+/* Base dashboard styles */
+.dashboard {
+  padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Dashboard Header - Make it sticky */
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Student Dashboard Header */
+.student-dashboard .dashboard-header {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-text h1 {
+  margin: 0 0 5px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-text p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* Main Content Layout */
+.dashboard-main {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 25px;
+  min-height: calc(100vh - 120px);
+}
+
+/* Navigation - Make it sticky too */
+.dashboard-nav {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 100px; /* Position below the header */
+  z-index: 900;
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+}
+
+.nav-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.nav-tab:hover {
+  background: #f8f9fa;
+  color: #333;
+  transform: translateX(3px);
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Student Dashboard active tab color */
+.student-dashboard .nav-tab.active {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 3px 12px rgba(72, 187, 120, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tab-text {
+  flex: 1;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+/* Content Area */
+.dashboard-content {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.content-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px 25px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.content-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.content-body {
+  padding: 25px;
+  min-height: 500px;
+}
+
+/* Student Layout */
+.student-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.pdfs-section, .chat-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.pdfs-section h3, .chat-section h3 {
+  margin: 0 0 15px 0;
+  color: #2c5282;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* PDF List */
+.pdfs-section {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Chat Interface */
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.select-pdf-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.select-pdf-prompt p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Quizzes Layout */
+.quizzes-layout {
+  margin-top: 20px;
+}
+
+/* Full-width announcements */
+.announcements-full {
+  margin-top: 0;
+}
+
+.announcements-full .announcement-list {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.announcements-full .announcement-item {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #48bb78;
+}
+
+.announcements-full .announcement-item h3 {
+  color: #2d3748;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.announcements-full .announcement-item p {
+  color: #718096;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.announcements-full .announcement-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+/* Empty state for announcements */
+.announcements-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #718096;
+  background: #f7fafc;
+  border-radius: 10px;
+  border: 2px dashed #e2e8f0;
+}
+
+.announcements-empty p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-main {
+    grid-template-columns: 130px 1fr;
+  }
+  
+  .student-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .dashboard-nav {
+    position: sticky;
+    top: 80px;
+    width: 100%;
+    max-height: none;
+  }
+  
+  .nav-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    gap: 8px;
+  }
+  
+  .nav-tab {
+    min-width: 100px;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .tab-text {
+    font-size: 0.8rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-text h1 {
+    font-size: 1.6rem;
+  }
+  
+  .header-text p {
+    font-size: 0.9rem;
+  }
+  
+  .content-body {
+    padding: 20px;
+  }
+  
+  .pdfs-section, .chat-section {
+    padding: 15px;
+  }
+  
+  .student-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .announcements-full .announcement-item {
+    padding: 15px;
+  }
+}
+
+/* Ensure content doesn't get hidden behind sticky elements */
+.dashboard-content {
+  margin-top: 0;
+}
+
+.content-body {
+  position: relative;
+}
+
+/* Fix for mobile scrolling */
+@media (max-width: 900px) {
+  .dashboard-nav {
+    position: sticky;
+    top: 70px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure proper stacking context */
+.dashboard-header {
+  isolation: isolate;
+}
+
+.dashboard-nav {
+  isolation: isolate;
+}
+
+/* Student Dashboard Specific Styles */
+.student-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  padding: 0;
+}
+
+/* Ensure consistent header styles */
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dashboard-nav {
+  position: sticky;
+  top: 100px;
+  z-index: 900;
+}
