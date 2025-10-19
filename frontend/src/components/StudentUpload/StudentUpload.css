@@ -1,0 +1,235 @@
+.student-upload-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upload-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.upload-header h2 {
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.upload-info {
+  color: #718096;
+  font-size: 1rem;
+}
+
+.upload-info strong {
+  color: #e53e3e;
+}
+
+/* File Upload Section */
+.upload-section {
+  text-align: center;
+  padding: 40px;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  background: #f7fafc;
+}
+
+.file-input-container {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4299e1;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.file-input-label:hover {
+  background: #3182ce;
+}
+
+.file-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.upload-btn {
+  padding: 12px 30px;
+  background: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: #38a169;
+}
+
+.upload-btn:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Chat Interface */
+.chat-interface {
+  margin-top: 20px;
+}
+
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.pdf-header h3 {
+  color: #2d3748;
+  margin: 0;
+}
+
+.clear-btn {
+  padding: 8px 16px;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.clear-btn:hover {
+  background: #c53030;
+}
+
+/* Chat History */
+.chat-history {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.chat-message {
+  margin-bottom: 15px;
+}
+
+.question-bubble {
+  background: #ebf8ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 4px solid #4299e1;
+}
+
+.answer-bubble {
+  background: #f0fff4;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #48bb78;
+  white-space: pre-wrap;
+}
+
+.answer-bubble.error {
+  background: #fed7d7;
+  border-left-color: #e53e3e;
+  color: #c53030;
+}
+
+/* Question Input */
+.question-input-container {
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.question-textarea {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.question-textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.ask-btn {
+  padding: 12px 20px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ask-btn:hover:not(:disabled) {
+  background: #3182ce;
+}
+
+.ask-btn:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-upload-container {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .upload-section {
+    padding: 20px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .ask-btn {
+    width: 100%;
+  }
+  
+  .pdf-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

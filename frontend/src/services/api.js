@@ -58,6 +58,12 @@ export const quizApi = {
   fixQuizzes: () => api.post('/quiz/teacher/fix-quizzes'), // Add this
 };
 
+export const userPdfApi = {
+  askTemporaryPdf: (data) => api.post('/user-pdf/ask-temporary-pdf', data)
+    .catch(error => {
+      throw new Error(error.response?.data?.message || 'Failed to process PDF question');
+    }),
+};
 
 export const aiApi = {
   askPdfQuestion: (data) => api.post('/ai/ask-pdf', data),

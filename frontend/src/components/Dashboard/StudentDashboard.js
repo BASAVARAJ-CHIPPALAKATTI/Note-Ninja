@@ -4,6 +4,7 @@ import ChatInterface from './ChatInterface';
 import QuizList from './QuizList';
 import QuizTaker from './QuizTaker';
 import AnnouncementList from '../Announcements/AnnouncementList';
+import StudentUpload from '../StudentUpload/StudentUpload'; // Import the new component
 import '../../styles/Dashboard.css';
 
 const StudentDashboard = () => {
@@ -47,6 +48,14 @@ const StudentDashboard = () => {
               <span className="tab-text">Study Materials</span>
             </button>
             <button
+              className={`nav-tab ${activeView === 'personal-upload' ? 'active' : ''}`}
+              onClick={() => setActiveView('personal-upload')}
+              title="My PDF Analysis"
+            >
+              <span className="tab-icon">📤</span>
+              <span className="tab-text">My PDF Analysis</span>
+            </button>
+            <button
               className={`nav-tab ${activeView === 'quizzes' ? 'active' : ''}`}
               onClick={() => setActiveView('quizzes')}
               title="Take Quizzes"
@@ -63,6 +72,7 @@ const StudentDashboard = () => {
             <h2>
               {activeView === 'announcements' && 'Announcements'}
               {activeView === 'study' && 'Study Materials & Chat'}
+              {activeView === 'personal-upload' && 'My PDF Analysis'}
               {activeView === 'quizzes' && 'Take Quizzes'}
             </h2>
           </div>
@@ -91,6 +101,12 @@ const StudentDashboard = () => {
                     </div>
                   )}
                 </div>
+              </div>
+            )}
+
+            {activeView === 'personal-upload' && (
+              <div className="personal-upload-section">
+                <StudentUpload />
               </div>
             )}
 

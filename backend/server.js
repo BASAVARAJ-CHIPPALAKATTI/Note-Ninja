@@ -8,6 +8,7 @@ const pdfRoutes = require('./routes/pdfRoutes');
 const aiRoutes = require('./routes/aiRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const quizRoutes = require('./routes/quizRoutes');
+const userPdfCon = require('./routes/userPdfCon');
 // const profileRoutes = require('./routes/profileRoutes');
 
 const app = express();
@@ -27,6 +28,7 @@ app.use('/api/pdfs', pdfRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/quiz', quizRoutes);
+app.use('/api/user-pdf', userPdfCon);
 // app.use('/api/profile', profileRoutes);
 
 // Health check
