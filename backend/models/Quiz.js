@@ -17,6 +17,15 @@ const questionSchema = new mongoose.Schema({
     required: true
   },
   options: [optionSchema],
+  correctAnswer: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  explanation: {
+    type: String,
+    default: ''
+  },
   questionType: {
     type: String,
     enum: ['multiple-choice', 'true-false', 'short-answer'],
@@ -45,6 +54,10 @@ const quizSchema = new mongoose.Schema({
     default: 'medium'
   },
   questions: [questionSchema],
+  totalQuestions: {
+    type: Number,
+    default: 0
+  },
   creator: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

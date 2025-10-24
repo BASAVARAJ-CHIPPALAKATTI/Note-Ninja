@@ -111,10 +111,10 @@ const QuizTaker = ({ quiz, onBack }) => {
               }
               
               return (
-                <div key={index} className={`question-result ${detail.correct ? 'correct' : 'incorrect'}`}>
+                <div key={index} className={`question-result ${detail.isCorrect ? 'correct' : 'incorrect'}`}>
                   <p><strong>Q{index + 1}:</strong> {question.question}</p>
                   <p>Your answer: {userAnswerText}</p>
-                  {!detail.correct && (
+                  {!detail.isCorrect && (
                     <p>Correct answer: {correctAnswerText}</p>
                   )}
                 </div>

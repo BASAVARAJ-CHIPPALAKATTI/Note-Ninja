@@ -7,7 +7,7 @@ const answerSchema = new mongoose.Schema({
     ref: 'Question'
   },
   selectedAnswer: {
-    type: String,
+    type: Number,
     required: true
   },
   isCorrect: {
@@ -19,6 +19,14 @@ const answerSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 0
+  },
+  correctAnswer: {
+    type: Number,
+    required: false
+  },
+  correctAnswerText: {
+    type: String,
+    required: false
   }
 });
 
