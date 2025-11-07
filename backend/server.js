@@ -10,7 +10,6 @@ const ragRoutes = require('./routes/ragRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 const userPdfCon = require('./routes/userPdfCon');
-// const profileRoutes = require('./routes/profileRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5001; 
@@ -18,8 +17,13 @@ const PORT = process.env.PORT || 5001;
 // Connect to MongoDB
 connectDB();
 
+// ✅ STEP 1: Update CORS like this
+app.use(cors({
+  origin: 'http://localhost:3000', // Your local frontend for testing
+  credentials: true
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,14 +35,23 @@ app.use('/api/rag', ragRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/user-pdf', userPdfCon);
-// app.use('/api/profile', profileRoutes);
+
+// ✅ STEP 2: Add a root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Note Ninja Backend API is running!',
+    version: '1.0.0',
+    status: 'active'
+  });
+});
 
 // Health check
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'OK', 
-    message: 'Edu Platform API is running',
-    database: 'MongoDB'
+    message: 'Note Ninja API is running',
+    database: 'MongoDB',
+    timestamp: new Date().toISOString()
   });
 });
 
@@ -49,16 +62,12 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log('MongoDB connected');
-  console.log('Available endpoints:');
+  console.log(`🚀 Note Ninja Server running on port ${PORT}`);
+  console.log('📊 Available endpoints:');
+  console.log('  GET  /');
+  console.log('  GET  /health');
   console.log('  POST /api/auth/register');
   console.log('  POST /api/auth/login');
-  console.log('  GET  /api/auth/profile');
   console.log('  POST /api/pdfs/upload');
-  console.log('  GET  /api/pdfs/teacher/pdfs');
-  console.log('  GET  /api/pdfs/student/pdfs');
-  console.log('  POST /api/pdfs/assign');
-  console.log('  GET  /api/pdfs/students');
   console.log('  POST /api/ai/ask-pdf');
 });
