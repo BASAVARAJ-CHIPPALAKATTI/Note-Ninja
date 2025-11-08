@@ -18,11 +18,16 @@ const PORT = process.env.PORT || 5001;
 connectDB();
 
 // ✅ STEP 1: Update CORS like this
+// Middleware - Updated CORS with your Vercel URL
 app.use(cors({
-  origin: 'http://localhost:3000', // Your local frontend for testing
-  credentials: true
+  origin: [
+    'https://note-ninja-gpm7c6d2b-bchippalakatti105-gmailcoms-projects.vercel.app',
+    'http://localhost:3000'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
 }));
-
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
