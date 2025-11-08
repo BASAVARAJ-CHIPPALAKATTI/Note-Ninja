@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = "https://note-ninja-168a.onrender.com";
+const API_BASE_URL = "https://note-ninja-168a.onrender.com/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
